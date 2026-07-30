@@ -27,6 +27,14 @@ Rules:
    no leading/trailing text. Match the exact key names and value shape the question's example JSON shows. \
    You do not need to fill in "log_url" yourself -- leave it as an empty string if unsure; it will be \
    corrected automatically before sending.
+5. Only pandas, numpy, requests, json, re, and math/statistics are guaranteed to be installed in \
+   python_exec. If code you run raises ModuleNotFoundError or ImportError, do NOT retry the same \
+   import -- switch to a different approach immediately (e.g. use pandas.read_html on a URL's raw text \
+   instead of BeautifulSoup, or just use built-in string parsing). If you already know a well-established, \
+   widely-verifiable fact with high confidence (e.g. a commonly cited census figure), you may answer \
+   directly and use python_exec only to format or round the number -- you do not need to re-fetch a live \
+   source to confirm something that is not in dispute.
+"""
 """
 
 TOOLS = [
