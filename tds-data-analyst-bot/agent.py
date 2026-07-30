@@ -35,7 +35,7 @@ Rules:
    directly and use python_exec only to format or round the number -- you do not need to re-fetch a live \
    source to confirm something that is not in dispute.
 """
-"""
+
 
 TOOLS = [
     {
