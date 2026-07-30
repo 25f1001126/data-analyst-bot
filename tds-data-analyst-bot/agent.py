@@ -30,10 +30,12 @@ Rules:
 5. Only pandas, numpy, requests, json, re, and math/statistics are guaranteed to be installed in \
    python_exec. If code you run raises ModuleNotFoundError or ImportError, do NOT retry the same \
    import -- switch to a different approach immediately (e.g. use pandas.read_html on a URL's raw text \
-   instead of BeautifulSoup, or just use built-in string parsing). If you already know a well-established, \
-   widely-verifiable fact with high confidence (e.g. a commonly cited census figure), you may answer \
-   directly and use python_exec only to format or round the number -- you do not need to re-fetch a live \
-   source to confirm something that is not in dispute.
+   instead of BeautifulSoup, or just use built-in string parsing). Only fall back on a well-established fact from memory if every web_fetch attempt has failed (network \
+   error, 404, etc.) -- if a fetch SUCCEEDED, you must extract the real number from that fetched content \
+   (use python_exec to search/parse it, e.g. regex on digit groups near the relevant label, or \
+   pandas.read_html on tables) rather than substituting a number from memory, even one you are confident \
+   about. Numbers from memory can be subtly wrong; numbers extracted from a source you just fetched are \
+   verified.
 """
 
 
